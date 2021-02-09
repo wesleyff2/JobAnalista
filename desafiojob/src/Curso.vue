@@ -1,8 +1,5 @@
 <template>
-
-
-
-  <div>
+  <div class="flex-container">
     <p>Escolha a modalidade</p>
     <input type="radio" id="one" value="Presencial" v-model="picked">
           <label for="one">Presencial</label>
@@ -40,8 +37,27 @@
             <option>Educação</option>
       </select>
     </template>
+    <div>
+        <b-button-group>
+          <button class="button"  v-b-modal.modal-1>Informações sobre o curso</button>
+            <b-modal id="modal-1" title="Detalhes sobre o curso " ok-only>
+                <template v-if="selected === 'Administração'"><p>Investimento inicial: R$ 5000,00 </p><p>Parcelas a partir de: R$700,00</p> </template>
+                <template v-else-if="selected === 'Direito'"><p>Investimento inicial: R$ 3400,00</p> <p>Parcelas a partir de: R$200,00</p></template>
+                <template v-else-if="selected === 'Enfermagem'"><p>Investimento inicial: R$ 8000,00</p> <p>Parcelas a partir de: R$100,00</p></template>
+                <template v-else-if="selected === 'Biomedicina'"><p>Investimento inicial: R$ 5300,00</p> <p>Parcelas a partir de: R$600,00</p></template>
+                <template v-else-if="selected === 'Farmácia'"><p>Investimento inicial: R$ 2000,00</p> <p>Parcelas a partir de: R$600,00</p></template>
+                <template v-else-if="selected === 'Agronomia'"><p>Investimento inicial: R$ 2500,00</p> <p>Parcelas a partir de: R$700,00</p></template>
+                <template v-else-if="selected === 'Bioquimica'"><p>Investimento inicial: R$ 5500,00</p> <p>Parcelas a partir de: R$700,00</p></template>
+                <template v-else-if="selected === 'Educação'"><p>Investimento inicial: R$ 8000,00  Parcelas a partir de: R$300,00</p> </template>
+          </b-modal>
+         </b-button-group>
+    </div>
   </div>
 </template>
+
+
+
+
 
 
 <script>
@@ -57,5 +73,29 @@
 </script>
 
 <style>
+    div{
+      justify-content: center;
+      margin: 5px;
 
+      
+    }
+    .flex-container {
+      font-size:15px;
+      justify-items: flex-end;
+      position: center;
+      width: 30%;
+      align-self: center;
+    }
+    .button {
+      border: 0.5px;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+    
 </style>

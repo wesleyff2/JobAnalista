@@ -84,7 +84,6 @@ import Crud from './Crud.vue'
 </template>
 
 <script>
-import Crud from './Crud.vue'
 
   export default {
     data() {
